@@ -62,13 +62,13 @@ guard image.width > 0 && image.height > 0 else { exit(0) }
 
 for y in 0..<image.height
 {
-    let offsetY = 4*y
+    let offsetY = 4*y * image.width
     for x in 0..<image.width
     {
-        let offsetX = 4*x
-        let r = pixelPointer[offsetY*image.width + offsetX]
-        let g = pixelPointer[offsetY*image.width + offsetX+1]
-        let b = pixelPointer[offsetY*image.width + offsetX+2]
+        let offsetX = 4*x + offsetY
+        let r = pixelPointer[offsetX]
+        let g = pixelPointer[offsetX+1]
+        let b = pixelPointer[offsetX+2]
 //        let a = pixelPointer[offsetY*image.width + offsetX+3]
         let currentColor = RGBColor(red: UInt16(r), green: UInt16(g), blue: UInt16(b))
         if colors.contains(where: { $0 == currentColor }) { continue }
