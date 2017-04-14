@@ -57,7 +57,6 @@ print("Image dimensions: \(image.width)x\(image.height)\n")
 let pixelPointer: UnsafePointer<uint8> = CFDataGetBytePtr(image.dataProvider?.data)
 
 var colors = Array<RGBColor>()
-var colorsWithLocation = Dictionary<RGBColor, Array<CGPoint>>()
 
 guard image.width > 0 && image.height > 0 else { exit(0) }
 
