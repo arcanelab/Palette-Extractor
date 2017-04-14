@@ -69,7 +69,6 @@ for y in 0..<image.height
         let r = pixelPointer[offsetX]
         let g = pixelPointer[offsetX+1]
         let b = pixelPointer[offsetX+2]
-//        let a = pixelPointer[offsetY*image.width + offsetX+3]
         let currentColor = RGBColor(red: UInt16(r), green: UInt16(g), blue: UInt16(b))
         if colors.contains(where: { $0 == currentColor }) { continue }
         colors.append(currentColor)
